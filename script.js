@@ -1,22 +1,25 @@
-adjustGrid = document.getElementById("adjust-grid");
-randomize = document.getElementById("randomize");
-gridContainer = document.querySelector(".grid-container");
-gridSquares = document.getElementsByClassName("grid");
+const adjustGrid = document.getElementById("adjust-grid");
+const randomize = document.getElementById("randomize");
+const gridContainer = document.querySelector(".grid-container");
+const gridSquares = document.getElementsByClassName("grid");
+
+document.getElementById("red").addEventListener("click", () => color = "red");
+document.getElementById("orange").addEventListener("click", () => color = "orange");
+document.getElementById("yellow").addEventListener("click", () => color = "yellow");
+document.getElementById("lime").addEventListener("click", () => color = "rgb(136, 255, 0)");
+document.getElementById("green").addEventListener("click", () => color = "rgb(0, 255, 21)");
+document.getElementById("aqua").addEventListener("click", () => color = "aqua");
+document.getElementById("blue").addEventListener("click", () => color = "blue");
+document.getElementById("purple").addEventListener("click", () => color = "rgb(111, 0, 255)");
+document.getElementById("pink").addEventListener("click", () => color = "rgb(234, 0, 255)");
+document.getElementById("bright-pink").addEventListener("click", () => color = "rgb(255, 0, 170)");
+document.getElementById("pinkRed").addEventListener("click", () => color = "rgb(255, 0, 76)");
+document.getElementById("white").addEventListener("click", () => color = "white");
+document.getElementById("grey").addEventListener("click", () => color = "grey");
+document.getElementById("slate").addEventListener("click", () => color = "rgb(66, 66, 66)");
+document.getElementById("black").addEventListener("click", () => color = "black");
 
 let color = "black";
-
-red = document.getElementById("red").addEventListener("click", () => color = "red");
-orange = document.getElementById("orange").addEventListener("click", () => color = "orange");
-yellow = document.getElementById("yellow").addEventListener("click", () => color = "yellow");
-lime = document.getElementById("lime").addEventListener("click", () => color = "lime");
-green = document.getElementById("green").addEventListener("click", () => color = "green");
-aqua = document.getElementById("aqua").addEventListener("click", () => color = "aqua");
-blue = document.getElementById("blue").addEventListener("click", () => color = "blue");
-purple = document.getElementById("purple").addEventListener("click", () => color = "purple");
-pink = document.getElementById("pink").addEventListener("click", () => color = "pink");
-brightPink = document.getElementById("bright-pink").addEventListener("click", () => color = "bright-pink");
-
-
 let gridSize = 16;
 
 adjustGrid.addEventListener("click", function() {
@@ -31,7 +34,7 @@ adjustGrid.addEventListener("click", function() {
 function grid() {
     gridContainer.querySelectorAll('*').forEach(div => div.remove());
     gridContainer.innerHtml = "";
-    gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, ${640 / gridSize}px`;
+    gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, ${640 / gridSize}px)`;
     gridContainer.style.gridTemplateRows = `repeat(${gridSize}, ${640 / gridSize}px)`;
     for (let i = 0; i < gridSize * gridSize; i++) {
         newGridSquare = document.createElement('div')
@@ -48,5 +51,13 @@ function addClassToDiv() {
         })
     }
 }
+
+randomize.addEventListener("click", function() {
+    for (let i = 0; i <gridSquares.length; i++) {
+        gridSquares[i].addEventListener("mouseover", function() {
+        gridSquares[i].style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+        })
+    }
+})
 
 grid();
