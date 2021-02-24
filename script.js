@@ -2,6 +2,21 @@ adjustGrid = document.getElementById("adjust-grid");
 randomize = document.getElementById("randomize");
 gridContainer = document.querySelector(".grid-container");
 gridSquares = document.getElementsByClassName("grid");
+
+let color = "black";
+
+red = document.getElementById("red").addEventListener("click", () => color = "red");
+orange = document.getElementById("orange").addEventListener("click", () => color = "orange");
+yellow = document.getElementById("yellow").addEventListener("click", () => color = "yellow");
+lime = document.getElementById("lime").addEventListener("click", () => color = "lime");
+green = document.getElementById("green").addEventListener("click", () => color = "green");
+aqua = document.getElementById("aqua").addEventListener("click", () => color = "aqua");
+blue = document.getElementById("blue").addEventListener("click", () => color = "blue");
+purple = document.getElementById("purple").addEventListener("click", () => color = "purple");
+pink = document.getElementById("pink").addEventListener("click", () => color = "pink");
+brightPink = document.getElementById("bright-pink").addEventListener("click", () => color = "bright-pink");
+
+
 let gridSize = 16;
 
 adjustGrid.addEventListener("click", function() {
@@ -29,9 +44,9 @@ function grid() {
 function addClassToDiv() {
     for (let i = 0; i < gridSquares.length; i++) {
         gridSquares[i].addEventListener("mouseover", function() {
-            gridSquares[i].style.backgroundColor = "red";
+            gridSquares[i].style.backgroundColor = color;
         })
     }
 }
 
-
+grid();
