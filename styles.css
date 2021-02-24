@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+}
+
+html {
+    background: rgb(50,53,61);
+    background: radial-gradient(circle, rgba(50,53,61,1) 0%, rgba(43,43,43,1) 100%);
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+    font-family: 'Asap', sans-serif;
+    color:#ffffff;
+    text-shadow: 0 1px 0 #CCCCCC,
+        0 6px 1px rgba(0,0,0,.1),
+        0 0 5px rgba(0,0,0,.1),
+        0 1px 3px rgba(0,0,0,.3),
+        0 3px 5px rgba(0,0,0,.2),
+        0 5px 10px rgba(0,0,0,.25),
+        0 10px 10px rgba(0,0,0,.2),
+        0 20px 20px rgba(0,0,0,.15);
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
+}
+
+.btn {
+    outline: none;
+    padding: 9px 25px;
+    margin: 0 1vh 0 1vh;
+    width: 150px;
+    background: linear-gradient(0deg, rgba(0,189,255,1) 0%, rgba(4,126,168,1) 49%, rgba(0,189,255,1) 100%);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-family: 'Asap', sans-serif;
+    font-weight: 400px;
+    box-shadow: 0 6px 1px rgba(0,0,0,.1),
+        0 0 5px rgba(0,0,0,.1),
+        0 1px 3px rgba(0,0,0,.3),
+        0 3px 5px rgba(0,0,0,.2),
+        0 5px 10px rgba(0,0,0,.25),
+        0 10px 10px rgba(0,0,0,.2),
+        0 20px 20px rgba(0,0,0,.15);
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+.btn:active {
+    box-shadow: 0px 0px 10px 2px #FFFFFF;
+    -webkit-box-shadow: inset 0px 0px 5px #000000;
+    -moz-box-shadow: inset 0px 0px 5px #000000;
+    box-shadow: inset 0px 0px 5px #000000;
+    outline: none;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(16, 40px);
+    grid-template-rows: repeat(16, 40px);
+    width: 640px;
+    height: 640px;
+    border: 2px solid black;
+    border-radius: 1px; 
+    margin: 3vh auto;
+    box-shadow: 0 0 4px rgb(0,189,255);
+}
+
+.grid {
+    border: 1px solid #000; 
+    background-color: white;
+}
+
+.palette {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    width: 300px;
+    height: 20px;
+    border: 1px solid black;
+    margin: 3vh auto;
+}
+
+.colors {
+    border: 1px solid black;
+}
+
+.colors:hover {
+    cursor: pointer;
+}
+
+#red {
+    background: red;
+}
+
+#orange {
+    background: rgb(255, 123, 0);
+}
+
+#yellow {
+    background: rgb(255, 238, 0);
+}
+
+#lime {
+    background: rgb(136, 255, 0);
+}
+
+#green {
+    background: rgb(0, 255, 21);
+}
+
+#aqua {
+    background: rgb(0, 255, 221);
+}
+
+#blue {
+    background: rgb(0, 60, 255);
+}
+
+#purple {
+    background: rgb(111, 0, 255);
+}
+
+#pink {
+    background: rgb(234, 0, 255);
+}
+
+#bright-pink {
+    background: rgb(255, 0, 170);
+}
+
+#pinkred {
+    background: rgb(255, 0, 76);
+}
+
+#white {
+    background: white;
+}
+
+#grey {
+    background: grey;
+}
+
+#slate {
+    background: rgb(66, 66, 66);
+}
+
+#black {
+    background: rgb(0, 0, 0);
+}
+
