@@ -9,6 +9,7 @@ let gridSize = 16;
 
 selectColors.forEach(selectColor => {
     selectColor.addEventListener("click", function(e) {
+        changeGridColor();
         color = e.target.dataset.color;
         console.dir(e.target)
     })
@@ -23,6 +24,14 @@ adjustGrid.addEventListener("click", function() {
     }
 });
 
+function changeGridColor() {
+    for (let i = 0; i < gridSquares.length; i++) {
+        gridSquares[i].addEventListener("mouseover", function() {
+            gridSquares[i].style.backgroundColor = color;
+        })
+    }
+}
+
 function grid() {
     gridContainer.querySelectorAll('*').forEach(div => div.remove());
     gridContainer.innerHtml = "";
@@ -33,21 +42,13 @@ function grid() {
         gridContainer.appendChild(newGridSquare);
         newGridSquare.className = "grid";
     }
-    addClassToDiv();
-}
-
-function addClassToDiv() {
-    for (let i = 0; i < gridSquares.length; i++) {
-        gridSquares[i].addEventListener("mouseover", function() {
-            gridSquares[i].style.backgroundColor = color;
-        })
-    }
+    changeGridColor();
 }
 
 randomize.addEventListener("click", function() {
     for (let i = 0; i <gridSquares.length; i++) {
         gridSquares[i].addEventListener("mouseover", function() {
-        gridSquares[i].style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+            gridSquares[i].style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
         })
     }
 })
