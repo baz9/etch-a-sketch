@@ -2,25 +2,17 @@ const adjustGrid = document.getElementById("adjust-grid");
 const randomize = document.getElementById("randomize");
 const gridContainer = document.querySelector(".grid-container");
 const gridSquares = document.getElementsByClassName("grid");
-
-document.getElementById("red").addEventListener("click", () => color = "red");
-document.getElementById("orange").addEventListener("click", () => color = "orange");
-document.getElementById("yellow").addEventListener("click", () => color = "yellow");
-document.getElementById("lime").addEventListener("click", () => color = "rgb(136, 255, 0)");
-document.getElementById("green").addEventListener("click", () => color = "rgb(0, 255, 21)");
-document.getElementById("aqua").addEventListener("click", () => color = "aqua");
-document.getElementById("blue").addEventListener("click", () => color = "blue");
-document.getElementById("purple").addEventListener("click", () => color = "rgb(111, 0, 255)");
-document.getElementById("pink").addEventListener("click", () => color = "rgb(234, 0, 255)");
-document.getElementById("bright-pink").addEventListener("click", () => color = "rgb(255, 0, 170)");
-document.getElementById("pinkRed").addEventListener("click", () => color = "rgb(255, 0, 76)");
-document.getElementById("white").addEventListener("click", () => color = "white");
-document.getElementById("grey").addEventListener("click", () => color = "grey");
-document.getElementById("slate").addEventListener("click", () => color = "rgb(66, 66, 66)");
-document.getElementById("black").addEventListener("click", () => color = "black");
+const selectColors = document.querySelectorAll(".colors");
 
 let color = "black";
 let gridSize = 16;
+
+selectColors.forEach(selectColor => {
+    selectColor.addEventListener("click", function(e) {
+        color = e.target.dataset.color;
+        console.dir(e.target)
+    })
+})
 
 adjustGrid.addEventListener("click", function() {
     gridSize = prompt("Pick the amount of rows you require between 4 and 64");
