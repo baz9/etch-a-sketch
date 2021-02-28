@@ -11,7 +11,6 @@ selectColors.forEach(selectColor => {
     selectColor.addEventListener("click", function(e) {
         changeGridColor();
         color = e.target.dataset.color;
-        console.dir(e.target)
     })
 })
 
